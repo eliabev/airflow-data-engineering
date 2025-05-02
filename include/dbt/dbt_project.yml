@@ -1,0 +1,19 @@
+name: 'retail'
+version: '1.0'
+config-version: 2
+
+profile: 'retail'
+
+# Directories relative to your project's root (e.g. include/dbt)
+# Assuming your SQL files are in include/dbt/models/transform
+model-paths: ["models"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
+
+models:
+  retail:
+    transform:
+      materialized: table

@@ -11,3 +11,5 @@ airflow.cfg
 airflow.db
 service_account.json
 .coder
+dbt_packages/
+target/
