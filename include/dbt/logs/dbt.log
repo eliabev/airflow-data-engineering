@@ -1858,3 +1858,135 @@ INNER JOIN `airflow-project-455812`.`retail`.`dim_customer` dc ON fi.customer_id
 [0m20:20:08.173696 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
 [0m20:20:08.174161 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7623c86b09b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7623c8fe2180>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7623c8fe1a60>]}
 [0m20:20:08.174513 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-05-03 02:38:13.032541 | 0dce3a9b-71fc-4b7e-8e7c-031dc2eae261 ==============================
+[0m02:38:13.032541 [info ] [MainThread]: Running with dbt=1.4.9
+[0m02:38:13.034522 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/usr/local/airflow/include/dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'select': ['path:models/report'], 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m02:38:13.034773 [debug] [MainThread]: Tracking: tracking
+[0m02:38:13.036938 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78416c196210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78416c48e150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784167054920>]}
+[0m02:38:13.158411 [debug] [MainThread]: checksum: 07ac7676dbf91b944d5fe41bac352fb2dda62b33015cbd1e52faa2a2c71f6d73, vars: {}, profile: None, target: None, version: 1.4.9
+[0m02:38:13.235379 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 3 files added, 0 files changed.
+[0m02:38:13.236012 [debug] [MainThread]: Partial parsing: added file: retail://models/report/report_year_invoices.sql
+[0m02:38:13.236404 [debug] [MainThread]: Partial parsing: added file: retail://models/report/report_customer_invoices.sql
+[0m02:38:13.236772 [debug] [MainThread]: Partial parsing: added file: retail://models/report/report_product_invoices.sql
+[0m02:38:13.271448 [debug] [MainThread]: 1699: static parser successfully parsed report/report_year_invoices.sql
+[0m02:38:13.288644 [debug] [MainThread]: 1699: static parser successfully parsed report/report_customer_invoices.sql
+[0m02:38:13.292384 [debug] [MainThread]: 1699: static parser successfully parsed report/report_product_invoices.sql
+[0m02:38:13.306925 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0dce3a9b-71fc-4b7e-8e7c-031dc2eae261', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784166f0ee40>]}
+[0m02:38:13.315388 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0dce3a9b-71fc-4b7e-8e7c-031dc2eae261', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78416722e240>]}
+[0m02:38:13.315802 [info ] [MainThread]: Found 7 models, 0 tests, 0 snapshots, 0 analyses, 453 macros, 0 operations, 0 seed files, 2 sources, 0 exposures, 0 metrics
+[0m02:38:13.316160 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0dce3a9b-71fc-4b7e-8e7c-031dc2eae261', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78418a6c5040>]}
+[0m02:38:13.318309 [info ] [MainThread]: 
+[0m02:38:13.320472 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m02:38:13.321690 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_airflow-project-455812'
+[0m02:38:13.322166 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:38:14.173653 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_airflow-project-455812_retail'
+[0m02:38:14.174123 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m02:38:14.763954 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0dce3a9b-71fc-4b7e-8e7c-031dc2eae261', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784166ec1c70>]}
+[0m02:38:14.764713 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m02:38:14.765041 [info ] [MainThread]: 
+[0m02:38:14.768939 [debug] [Thread-1 (]: Began running node model.retail.report_customer_invoices
+[0m02:38:14.769385 [info ] [Thread-1 (]: 1 of 3 START sql view model retail.report_customer_invoices .................... [RUN]
+[0m02:38:14.770337 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.retail.report_customer_invoices'
+[0m02:38:14.770673 [debug] [Thread-1 (]: Began compiling node model.retail.report_customer_invoices
+[0m02:38:14.773603 [debug] [Thread-1 (]: Writing injected SQL for node "model.retail.report_customer_invoices"
+[0m02:38:14.774095 [debug] [Thread-1 (]: Timing info for model.retail.report_customer_invoices (compile): 2025-05-03 02:38:14.770819 => 2025-05-03 02:38:14.774013
+[0m02:38:14.774398 [debug] [Thread-1 (]: Began executing node model.retail.report_customer_invoices
+[0m02:38:14.814288 [debug] [Thread-1 (]: Writing runtime sql for node "model.retail.report_customer_invoices"
+[0m02:38:14.814810 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m02:38:14.847208 [debug] [Thread-1 (]: On model.retail.report_customer_invoices: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "retail", "target_name": "dev", "node_id": "model.retail.report_customer_invoices"} */
+
+
+  create or replace view `airflow-project-455812`.`retail`.`report_customer_invoices`
+  OPTIONS()
+  as SELECT
+  c.country,
+  c.iso,
+  COUNT(fi.invoice_id) AS total_invoices,
+  SUM(fi.total) AS total_revenue
+FROM `airflow-project-455812`.`retail`.`fct_invoices` fi
+JOIN `airflow-project-455812`.`retail`.`dim_customer` c ON fi.customer_id = c.customer_id
+GROUP BY c.country, c.iso
+ORDER BY total_revenue DESC
+LIMIT 10;
+
+
+[0m02:38:16.205917 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airflow-project-455812&j=bq:US:6594cfbe-4f0c-4603-bcb7-2823431847e6&page=queryresults
+[0m02:38:16.224853 [debug] [Thread-1 (]: Timing info for model.retail.report_customer_invoices (execute): 2025-05-03 02:38:14.774629 => 2025-05-03 02:38:16.224785
+[0m02:38:16.225485 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0dce3a9b-71fc-4b7e-8e7c-031dc2eae261', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78416765dd60>]}
+[0m02:38:16.225865 [info ] [Thread-1 (]: 1 of 3 OK created sql view model retail.report_customer_invoices ............... [[32mCREATE VIEW (0 processed)[0m in 1.46s]
+[0m02:38:16.227555 [debug] [Thread-1 (]: Finished running node model.retail.report_customer_invoices
+[0m02:38:16.227896 [debug] [Thread-1 (]: Began running node model.retail.report_product_invoices
+[0m02:38:16.228218 [info ] [Thread-1 (]: 2 of 3 START sql view model retail.report_product_invoices ..................... [RUN]
+[0m02:38:16.228912 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.retail.report_product_invoices'
+[0m02:38:16.229169 [debug] [Thread-1 (]: Began compiling node model.retail.report_product_invoices
+[0m02:38:16.236879 [debug] [Thread-1 (]: Writing injected SQL for node "model.retail.report_product_invoices"
+[0m02:38:16.238504 [debug] [Thread-1 (]: Timing info for model.retail.report_product_invoices (compile): 2025-05-03 02:38:16.229321 => 2025-05-03 02:38:16.238360
+[0m02:38:16.238824 [debug] [Thread-1 (]: Began executing node model.retail.report_product_invoices
+[0m02:38:16.244236 [debug] [Thread-1 (]: Writing runtime sql for node "model.retail.report_product_invoices"
+[0m02:38:16.245049 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m02:38:16.294934 [debug] [Thread-1 (]: On model.retail.report_product_invoices: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "retail", "target_name": "dev", "node_id": "model.retail.report_product_invoices"} */
+
+
+  create or replace view `airflow-project-455812`.`retail`.`report_product_invoices`
+  OPTIONS()
+  as SELECT
+  p.product_id,
+  p.stock_code,
+  p.description,
+  SUM(fi.quantity) AS total_quantity_sold
+FROM `airflow-project-455812`.`retail`.`fct_invoices` fi
+JOIN `airflow-project-455812`.`retail`.`dim_product` p ON fi.product_id = p.product_id
+GROUP BY p.product_id, p.stock_code, p.description
+ORDER BY total_quantity_sold DESC
+LIMIT 10;
+
+
+[0m02:38:17.733143 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airflow-project-455812&j=bq:US:5f42bb1d-f8aa-4816-89ac-47e434431c50&page=queryresults
+[0m02:38:17.734624 [debug] [Thread-1 (]: Timing info for model.retail.report_product_invoices (execute): 2025-05-03 02:38:16.238994 => 2025-05-03 02:38:17.734584
+[0m02:38:17.735164 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0dce3a9b-71fc-4b7e-8e7c-031dc2eae261', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784166e1af90>]}
+[0m02:38:17.735505 [info ] [Thread-1 (]: 2 of 3 OK created sql view model retail.report_product_invoices ................ [[32mCREATE VIEW (0 processed)[0m in 1.51s]
+[0m02:38:17.735859 [debug] [Thread-1 (]: Finished running node model.retail.report_product_invoices
+[0m02:38:17.736117 [debug] [Thread-1 (]: Began running node model.retail.report_year_invoices
+[0m02:38:17.736383 [info ] [Thread-1 (]: 3 of 3 START sql view model retail.report_year_invoices ........................ [RUN]
+[0m02:38:17.736919 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.retail.report_year_invoices'
+[0m02:38:17.737096 [debug] [Thread-1 (]: Began compiling node model.retail.report_year_invoices
+[0m02:38:17.739525 [debug] [Thread-1 (]: Writing injected SQL for node "model.retail.report_year_invoices"
+[0m02:38:17.739851 [debug] [Thread-1 (]: Timing info for model.retail.report_year_invoices (compile): 2025-05-03 02:38:17.737221 => 2025-05-03 02:38:17.739798
+[0m02:38:17.740059 [debug] [Thread-1 (]: Began executing node model.retail.report_year_invoices
+[0m02:38:17.742840 [debug] [Thread-1 (]: Writing runtime sql for node "model.retail.report_year_invoices"
+[0m02:38:17.743302 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m02:38:17.785850 [debug] [Thread-1 (]: On model.retail.report_year_invoices: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "retail", "target_name": "dev", "node_id": "model.retail.report_year_invoices"} */
+
+
+  create or replace view `airflow-project-455812`.`retail`.`report_year_invoices`
+  OPTIONS()
+  as SELECT
+  dt.year,
+  dt.month,
+  COUNT(DISTINCT fi.invoice_id) AS num_invoices,
+  SUM(fi.total) AS total_revenue
+FROM `airflow-project-455812`.`retail`.`fct_invoices` fi
+JOIN `airflow-project-455812`.`retail`.`dim_datetime` dt ON fi.datetime_id = dt.datetime_id
+GROUP BY dt.year, dt.month
+ORDER BY dt.year, dt.month;
+
+
+[0m02:38:19.166112 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airflow-project-455812&j=bq:US:329806e9-fbf3-488a-9de2-855bdc8abe5f&page=queryresults
+[0m02:38:19.167496 [debug] [Thread-1 (]: Timing info for model.retail.report_year_invoices (execute): 2025-05-03 02:38:17.740177 => 2025-05-03 02:38:19.167425
+[0m02:38:19.168100 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0dce3a9b-71fc-4b7e-8e7c-031dc2eae261', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784166e1b530>]}
+[0m02:38:19.168443 [info ] [Thread-1 (]: 3 of 3 OK created sql view model retail.report_year_invoices ................... [[32mCREATE VIEW (0 processed)[0m in 1.43s]
+[0m02:38:19.168786 [debug] [Thread-1 (]: Finished running node model.retail.report_year_invoices
+[0m02:38:19.169922 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m02:38:19.170421 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:38:19.170583 [debug] [MainThread]: Connection 'model.retail.report_year_invoices' was properly closed.
+[0m02:38:19.170754 [info ] [MainThread]: 
+[0m02:38:19.171008 [info ] [MainThread]: Finished running 3 view models in 0 hours 0 minutes and 5.85 seconds (5.85s).
+[0m02:38:19.171427 [debug] [MainThread]: Command end result
+[0m02:38:19.182428 [info ] [MainThread]: 
+[0m02:38:19.182929 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m02:38:19.183279 [info ] [MainThread]: 
+[0m02:38:19.183609 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m02:38:19.184028 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78416c1972f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78416c16b7a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784165f5acf0>]}
+[0m02:38:19.184352 [debug] [MainThread]: Flushing usage events
