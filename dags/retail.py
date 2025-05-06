@@ -9,7 +9,8 @@ from astro.constants import FileType
 from include.dbt.cosmos_config import DBT_PROJECT_CONFIG, DBT_CONFIG
 from cosmos.airflow.task_group import DbtTaskGroup
 from cosmos.constants import LoadMode
-from cosmos.config import ProjectConfig, RenderConfig
+from cosmos.config import RenderConfig
+from airflow.models.baseoperator import chain
 
 @dag(
     start_date=datetime(2023, 1, 1),
@@ -53,8 +54,6 @@ def retail():
         from include.soda.check_function import check
 
         return check(scan_name, checks_subpath)
-    
-    check_load()
 
     
     transform = DbtTaskGroup(
@@ -72,8 +71,6 @@ def retail():
         from include.soda.check_function import check
 
         return check(scan_name, checks_subpath)
-    
-    check_transform()
 
     report = DbtTaskGroup(
         group_id='report',
@@ -91,6 +88,16 @@ def retail():
 
         return check(scan_name, checks_subpath)
     
-    check_report()
+
+    chain(
+        upload_csv_to_gcs,
+        create_retail_dataset,
+        gcs_to_raw,
+        check_load(),
+        transform,
+        check_transform(),
+        report,
+        check_report()
+    )
 
 retail()
